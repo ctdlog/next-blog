@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import PostType from '../../interfaces/post';
 import { getAllPosts, getPostBySlug } from '../../lib/api';
@@ -15,6 +16,32 @@ const Post = ({ post }: Props) => {
 
   return (
     <>
+      <Head>
+        <link
+          rel='preload'
+          href='https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css'
+          as='script'
+        />
+        <link
+          rel='preload'
+          href='https://unpkg.com/prismjs@0.0.1/themes/prism-coy.css'
+          as='script'
+        />
+        <link
+          rel='preload'
+          href='https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css'
+          as='script'
+        />
+        <link
+          rel='preload'
+          href='https://unpkg.com/prismjs@0.0.1/themes/prism-funky.css'
+          as='script'
+        />
+        <link
+          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css`}
+          rel='stylesheet'
+        />
+      </Head>
       <div>{post.title}</div>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </>
