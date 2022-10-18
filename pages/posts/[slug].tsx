@@ -8,6 +8,13 @@ import styled from '@emotion/styled';
 const Title = styled.h1`
   font-size: 22px;
   font-weight: 500;
+  margin-top: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dee2e6;
+`;
+
+const Content = styled.p`
+  margin-top: 32px;
 `;
 
 type Props = {
@@ -49,7 +56,7 @@ const Post = ({ post }: Props) => {
         />
       </Head>
       <Title>{post.title}</Title>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <Content dangerouslySetInnerHTML={{ __html: post.content }} />
     </>
   );
 };
