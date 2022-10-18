@@ -3,6 +3,12 @@ import { useRouter } from 'next/router';
 import PostType from '../../interfaces/post';
 import { getAllPosts, getPostBySlug } from '../../lib/api';
 import markdownToHtml from '../../lib/markdownToHtml';
+import styled from '@emotion/styled';
+
+const Title = styled.h1`
+  font-size: 22px;
+  font-weight: 500;
+`;
 
 type Props = {
   post: PostType;
@@ -42,7 +48,7 @@ const Post = ({ post }: Props) => {
           rel='stylesheet'
         />
       </Head>
-      <div>{post.title}</div>
+      <Title>{post.title}</Title>
       <div dangerouslySetInnerHTML={{ __html: post.content }} />
     </>
   );
