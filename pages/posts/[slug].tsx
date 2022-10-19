@@ -1,74 +1,29 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import PostType from '../../interfaces/post';
-import { getAllPosts, getPostBySlug } from '../../lib/api';
-import markdownToHtml from '../../lib/markdownToHtml';
-import styled from '@emotion/styled';
+import { getAllPosts, getPostBySlug } from '@/lib/api';
+import markdownToHtml from '@/lib/markdownToHtml';
+import PostDetailView from '@/components/PostDetailView';
+import { GetStaticPropsContext } from 'next';
+import { unstable_serialize } from 'swr';
 
-const Title = styled.h1`
-  font-size: 22px;
-  font-weight: 500;
-  margin-top: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #dee2e6;
-`;
-
-const Content = styled.p`
-  margin-top: 32px;
-`;
-
-type Props = {
-  post: PostType;
+const Post = () => {
+  // const router = useRouter();
+  // // if (!router.isFallback && !post?.slug) {
+  // //   return <div>Error</div>;
+  // //
+  return <PostDetailView />;
 };
 
-const Post = ({ post }: Props) => {
-  const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
-    return <div>Error</div>;
+// getStaticPaths에서 context를 Return 해줌.
+// https://nextjs.org/docs/api-reference/data-fetching/get-static-props
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const { slug } = context.params || {};
+
+  if (typeof slug !== 'string') {
+    return {
+      props: {},
+    };
   }
 
-  return (
-    <>
-      <Head>
-        <link
-          rel='preload'
-          href='https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css'
-          as='script'
-        />
-        <link
-          rel='preload'
-          href='https://unpkg.com/prismjs@0.0.1/themes/prism-coy.css'
-          as='script'
-        />
-        <link
-          rel='preload'
-          href='https://unpkg.com/prismjs@0.0.1/themes/prism-okaidia.css'
-          as='script'
-        />
-        <link
-          rel='preload'
-          href='https://unpkg.com/prismjs@0.0.1/themes/prism-funky.css'
-          as='script'
-        />
-        <link
-          href={`https://unpkg.com/prismjs@0.0.1/themes/prism-tomorrow.css`}
-          rel='stylesheet'
-        />
-      </Head>
-      <Title>{post.title}</Title>
-      <Content dangerouslySetInnerHTML={{ __html: post.content }} />
-    </>
-  );
-};
-
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+  const post = getPostBySlug(slug, [
     'title',
     'slug',
     'description',
@@ -82,9 +37,11 @@ export async function getStaticProps({ params }: Params) {
 
   return {
     props: {
-      post: {
-        ...post,
-        content,
+      fallback: {
+        [unstable_serialize(['posts', slug])]: {
+          ...post,
+          content,
+        },
       },
     },
   };

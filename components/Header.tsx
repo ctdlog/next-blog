@@ -19,6 +19,8 @@ const LinkWrapper = styled.div`
 
   a {
     margin: 0 12px;
+    color: inherit;
+    text-decoration: none;
   }
 `;
 

@@ -4,50 +4,9 @@ export const globalStyles = (
   <Global
     styles={css`
       html,
-      body,
-      p,
-      ol,
-      ul,
-      li,
-      dl,
-      dt,
-      dd,
-      blockquote,
-      figure,
-      fieldset,
-      legend,
-      textarea,
-      pre,
-      iframe,
-      hr,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+      body {
         margin: 0;
         padding: 0;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-size: 100%;
-        font-weight: normal;
-      }
-
-      ul {
-        list-style: none;
-      }
-
-      button,
-      input,
-      select {
-        margin: 0;
       }
 
       html {
@@ -55,6 +14,12 @@ export const globalStyles = (
         margin: 0 auto;
         box-sizing: border-box;
         padding: 2rem;
+      }
+
+      button,
+      input,
+      select {
+        margin: 0;
       }
 
       *,
@@ -69,23 +34,17 @@ export const globalStyles = (
         max-width: 100%;
       }
 
-      iframe {
-        border: 0;
+      blockquote {
+        padding: 12px 24px;
+        border-left: 5px solid #78c0a8;
+        line-height: 1.6;
+        background: #ededed;
+        margin: 0;
       }
 
-      table {
-        border-collapse: collapse;
-        border-spacing: 0;
-      }
-
-      td,
-      th {
-        padding: 0;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
+      blockquote p {
+        color: #333333;
+        margin: 0;
       }
     `}
   />

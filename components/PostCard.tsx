@@ -1,4 +1,4 @@
-import PostType from '@/interfaces/post';
+import type PostType from '@/interfaces/post';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 
@@ -7,7 +7,7 @@ const PostCardBlock = styled.div`
   text-align: left;
   color: inherit;
   transition: color 0.15s ease, border-color 0.15s ease;
-  margin-top: 24px;
+  margin-top: 16px;
   cursor: pointer;
   &:hover,
   &:focus,
