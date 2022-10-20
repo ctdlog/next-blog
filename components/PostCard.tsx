@@ -7,7 +7,7 @@ const PostCardBlock = styled.div`
   text-align: left;
   color: inherit;
   transition: color 0.15s ease, border-color 0.15s ease;
-  margin-top: 16px;
+  margin-bottom: 28px;
   cursor: pointer;
   &:hover,
   &:focus,
@@ -17,16 +17,16 @@ const PostCardBlock = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
   font-size: 24px;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 `;
 
-const Date = styled.h2`
+const Date = styled.div`
   font-size: 17px;
   color: #868e96;
 `;

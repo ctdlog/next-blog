@@ -12,6 +12,7 @@ const Title = styled.h1`
   padding-bottom: 14px;
   border-bottom: ${({ theme }) => `1px solid ${theme.borderBottomColor}`};
   margin-top: 40px;
+  margin-bottom: 24px;
 `;
 
 const Main = styled.div`

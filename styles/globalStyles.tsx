@@ -7,6 +7,8 @@ const style = (theme: Theme) => css`
     padding: 0;
     color: ${theme.fontColor};
     background-color: ${theme.bgColor};
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   html {

@@ -57,7 +57,7 @@ const Header = () => {
   const { isDark, toggleTheme } = useContext(ThemeContext);
   return (
     <HeaderBlock>
-      <LogoImage src='/logo.jpg' alt='logo' width='30' height='30' />
+      <LogoImage src='/logo.jpg' alt='logo' width='35' height='35' />
       <Logo>Next LAB</Logo>
       <LinkWrapper>
         <ModeToggleButton onClick={toggleTheme}>
