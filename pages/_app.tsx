@@ -2,9 +2,14 @@ import type { AppProps } from 'next/app';
 import { globalStyles } from '@/styles/globalStyles';
 import Head from 'next/head';
 import { SWRConfig } from 'swr';
+import { ThemeProvider } from '@emotion/react';
+import { darkTheme, lightTheme } from '@/styles/theme';
+import ThemeContext from '@/contexts/ThemeContext';
+import { useTheme } from '@/hooks/useTheme';
 
 function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
   const { fallback } = pageProps;
+  const { isDark, toggleTheme } = useTheme(false);
 
   return (
     <>
@@ -37,9 +42,13 @@ function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
           rel='stylesheet'
         />
       </Head>
-      {globalStyles}
       <SWRConfig value={{ fallback }}>
-        <Component {...pageProps} />
+        <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+          <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+            {globalStyles}
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </ThemeContext.Provider>
       </SWRConfig>
     </>
   );
