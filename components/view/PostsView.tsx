@@ -8,9 +8,9 @@ import PostCard from '@/components/PostCard';
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 600;
-  color: #fd7e14;
+  color: ${({ theme }) => theme.titleColor};
   padding-bottom: 14px;
-  border-bottom: 1px solid #f1f3f5;
+  border-bottom: ${({ theme }) => `1px solid ${theme.borderBottomColor}`};
   margin-top: 40px;
 `;
 
