@@ -1,7 +1,6 @@
 import ThemeContext from '@/contexts/ThemeContext';
 import styled from '@emotion/styled';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useContext } from 'react';
 import { BsSun, BsMoon } from 'react-icons/bs';
 
@@ -36,7 +35,7 @@ const LinkWrapper = styled.div`
   }
 `;
 
-const ModeToggleButton = styled.button<{ isDark: boolean }>`
+const ModeToggleButton = styled.button`
   color: white;
   background: none;
   border: none;
@@ -45,10 +44,10 @@ const ModeToggleButton = styled.button<{ isDark: boolean }>`
   cursor: pointer;
 
   svg {
-    width: 30px;
-    height: 30px;
-    color: ${({ isDark }) => (isDark ? '#fff' : '#000')};
-    background-color: ${({ isDark }) => (isDark ? '#343a40' : '#e9ecef')};
+    width: 35px;
+    height: 35px;
+    color: ${({ theme }) => theme.fontColor};
+    background-color: ${({ theme }) => theme.bgColor};
     border-radius: 6px;
     padding: 6px;
   }
@@ -61,7 +60,7 @@ const Header = () => {
       <LogoImage src='/logo.jpg' alt='logo' width='30' height='30' />
       <Logo>Next LAB</Logo>
       <LinkWrapper>
-        <ModeToggleButton onClick={toggleTheme} isDark={isDark}>
+        <ModeToggleButton onClick={toggleTheme}>
           {isDark ? <BsSun /> : <BsMoon />}
         </ModeToggleButton>
         {/* <Link href={'/'}>Home</Link>

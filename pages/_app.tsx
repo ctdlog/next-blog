@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { globalStyles } from '@/styles/globalStyles';
+import { GlobalStyles } from '@/styles/globalStyles';
 import Head from 'next/head';
 import { SWRConfig } from 'swr';
 import { ThemeProvider } from '@emotion/react';
@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
       <SWRConfig value={{ fallback }}>
         <ThemeContext.Provider value={{ isDark, toggleTheme }}>
           <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-            {globalStyles}
+            {GlobalStyles}
             <Component {...pageProps} />
           </ThemeProvider>
         </ThemeContext.Provider>

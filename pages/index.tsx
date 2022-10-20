@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import { getAllPosts } from '@/lib/api';
-import PostsView from '@/components/PostsView';
+import { getAllPosts } from '@/services/api';
+import PostsView from '@/components/view/PostsView';
 import { unstable_serialize } from 'swr';
 
 const Home: NextPage = () => {

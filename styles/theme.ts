@@ -1,11 +1,14 @@
-export const lightTheme = {
-  text: '#000',
-  background: '#fff',
+interface Theme {
+  fontColor: string;
+  bgColor: string;
+}
+
+export const lightTheme: Theme = {
+  fontColor: '#000',
+  bgColor: '#fff',
 };
 
-export const darkTheme = {
-  text: '#fff',
-  background: '#121212',
+export const darkTheme: Theme = {
+  fontColor: '#fff',
+  bgColor: '#121212',
 };
-
-export type Theme = typeof lightTheme;

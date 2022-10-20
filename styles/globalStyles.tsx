@@ -5,8 +5,8 @@ const style = (theme: Theme) => css`
   body {
     margin: 0;
     padding: 0;
-    color: ${theme.text};
-    background-color: ${theme.background};
+    color: ${theme.fontColor};
+    background-color: ${theme.bgColor};
   }
 
   html {
@@ -48,4 +48,4 @@ const style = (theme: Theme) => css`
   }
 `;
 
-export const globalStyles = <Global styles={style} />;
+export const GlobalStyles = <Global styles={style} />;

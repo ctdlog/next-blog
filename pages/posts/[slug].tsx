@@ -1,6 +1,6 @@
-import { getAllPosts, getPostBySlug } from '@/lib/api';
-import markdownToHtml from '@/lib/markdownToHtml';
-import PostDetailView from '@/components/PostDetailView';
+import { getAllPosts, getPostBySlug } from '@/services/api';
+import markdownToHtml from '@/services/markdownToHtml';
+import PostDetailView from '@/components/view/PostDetailView';
 import { GetStaticPropsContext } from 'next';
 import { unstable_serialize } from 'swr';
 
