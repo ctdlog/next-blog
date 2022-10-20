@@ -1,4 +1,4 @@
-import PostType from '@/interfaces/post';
+import type { PostType } from '@/interfaces/post';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import useSWR from 'swr';

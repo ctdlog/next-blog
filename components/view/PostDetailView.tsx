@@ -1,4 +1,4 @@
-import type PostType from '@/interfaces/post';
+import type { PostType } from '@/interfaces/post';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
