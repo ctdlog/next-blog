@@ -1,4 +1,4 @@
-import type PostType from '@/interfaces/post';
+import type { PostType } from '@/interfaces/post';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 

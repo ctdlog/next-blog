@@ -9,7 +9,7 @@ import { useTheme } from '@/hooks/useTheme';
 
 function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
   const { fallback } = pageProps;
-  const { isDark, toggleTheme } = useTheme(false);
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <>
