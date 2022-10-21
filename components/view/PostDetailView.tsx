@@ -2,6 +2,10 @@ import type { PostType } from '@/interfaces/post';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
+import dynamic from 'next/dynamic';
+const Comments = dynamic(() => import('@/components/Comments'), {
+  ssr: false,
+});
 
 const Title = styled.h1`
   font-size: 22px;
@@ -22,6 +26,7 @@ const PostDetailView = () => {
     <>
       <Title>{post?.title}</Title>
       <Content dangerouslySetInnerHTML={{ __html: post?.content ?? '' }} />
+      <Comments />
     </>
   );
 };

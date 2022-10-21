@@ -7,7 +7,7 @@ import { BsSun, BsMoon } from 'react-icons/bs';
 const HeaderBlock = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   padding: 16px 0;
 `;
 
@@ -57,7 +57,7 @@ const Header = () => {
   const { isDark, toggleTheme } = useContext(ThemeContext);
   return (
     <HeaderBlock>
-      <LogoImage src='/logo.jpg' alt='logo' width='35' height='35' />
+      {/* <LogoImage src='/logo.jpg' alt='logo' width='35' height='35' /> */}
       <Logo>Next LAB</Logo>
       <LinkWrapper>
         <ModeToggleButton onClick={toggleTheme}>
