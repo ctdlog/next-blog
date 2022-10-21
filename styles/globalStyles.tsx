@@ -48,6 +48,10 @@ const style = (theme: Theme) => css`
     color: #333333;
     margin: 0;
   }
+
+  .utterances {
+    max-width: 100% !important;
+  }
 `;
 
 export const GlobalStyles = <Global styles={style} />;

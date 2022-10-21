@@ -73,10 +73,10 @@ function MyApp({ Component, pageProps }: AppProps<{ fallback: any }>) {
           });
         `}
       </Script>
-      {GlobalStyles}
       <SWRConfig value={{ fallback }}>
         <ThemeContext.Provider value={{ isDark, toggleTheme }}>
           <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+            {GlobalStyles}
             <Component {...pageProps} />
           </ThemeProvider>
         </ThemeContext.Provider>
