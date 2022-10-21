@@ -5,8 +5,6 @@ date: '2022-10-18'
 author:
   name: Hyung Wook
   picture: ''
-ogImage:
-  url: ''
 ---
 
 써킷

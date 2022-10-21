@@ -16,8 +16,8 @@ const LogoImage = styled(Image)`
 `;
 
 const Logo = styled.div`
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 36px;
+  font-weight: 700;
   margin-left: 10px;
 `;
 
@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <HeaderBlock>
       {/* <LogoImage src='/logo.jpg' alt='logo' width='35' height='35' /> */}
-      <Logo>Next LAB</Logo>
+      <Logo>Next LAB.</Logo>
       <LinkWrapper>
         <ModeToggleButton onClick={toggleTheme}>
           {isDark ? <BsSun /> : <BsMoon />}

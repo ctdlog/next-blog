@@ -1,12 +1,11 @@
 ---
+category: ['test']
 title: 'Circuit'
-coverImage: ''
 date: '2022-10-18'
+coverImage: ''
 author:
   name: Hyung Wook
   picture: ''
-ogImage:
-  url: ''
 ---
 
 써킷

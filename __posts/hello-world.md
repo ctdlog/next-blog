@@ -1,6 +1,6 @@
 ---
 title: 'Learn How to Pre-render Pages Using Static Generation with Next.js'
-coverImage: '/assets/blog/hello-world/cover.jpg'
+coverImage: ''
 date: '2022-10-15'
 author:
   name: Tim Neutkens

@@ -1,7 +1,7 @@
 ---
+category: ['test']
 title: 마크다운 테스트
 date: '2022-10-19'
-description: 설명란입니다. 설명을 적어요~
 ---
 
 # Heading 1
